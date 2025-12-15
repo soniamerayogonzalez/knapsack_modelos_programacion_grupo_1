@@ -1,0 +1,18 @@
+name: Check Notebooks NBSTRIPOUT
+
+on: [push, pull_request]
+
+jobs:
+  check-notebooks:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.9'
+    - name: Install nbstripout
+      run: pip install nbstripout
+    - name: Check if notebooks are stripped
+      run: |
+        nbstripout --is-stripped **/*.ipynb || (echo "ERROR: Los notebooks no están limpios. Ejecuta 'nbstripout' antes de subir. ('pip install nbstripout' en tu venv y 'nbstripout --install' en el repositorio git" && exit 1)
