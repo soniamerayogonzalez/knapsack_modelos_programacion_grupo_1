@@ -10,7 +10,8 @@ Creamos el virtual env y instalamos todas las dependencias que necesitamos
 ```
 python –m venv modelos_computacion
 
-#ELEGIR UNA DE LAS SIGUIENTES OPCIONESdelos_computacion\Scripts\activate # en Windows
+#ELEGIR UNA DE LAS SIGUIENTES OPCIONES
+modelos_computacion\Scripts\activate # en Windows
 . modelos_computacion/bin/activate # en sistemas Unix
 
 pip install dwave-ocean-sdk
